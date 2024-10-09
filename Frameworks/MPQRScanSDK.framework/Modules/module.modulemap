@@ -1,0 +1,6 @@
+framework module MPQRScanSDK {
+  umbrella header "MPQRScanSDK.h"
+
+  export *
+  module * { export * }
+}
