@@ -91,11 +91,7 @@ public class QRCodeReader {
                     print("Invalid length for tag \(tag): \(lengthString)")
                     break
                 }
-                
-                // Move index to start of value
                 index = lengthEnd
-                
-                // Calculate end index of value
                 guard let valueEnd = emvcoString.index(index, offsetBy: length, limitedBy: emvcoString.endIndex) else {
                     print("Incomplete value for tag \(tag). Expected length: \(length)")
                     break
@@ -104,7 +100,6 @@ public class QRCodeReader {
                 let value = String(emvcoString[index..<valueEnd])
                 result[tag] = value
                 
-                // Move index to the next tag
                 index = valueEnd
             }
             
