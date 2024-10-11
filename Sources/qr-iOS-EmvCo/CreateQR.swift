@@ -12,7 +12,7 @@ public class QRCodeGenerator {
     public var parsedData: [String: String] = [:]
     private let context = CIContext()
     public init() {
-        // Initialize any properties or setup code here if needed
+        // Initialize any properties
     }
     
     public func generatePushPaymentQR(transactionCurrencyCode: String,city: String,merchantCategoryCode: String,countryCode: String,firstName: String,lastName: String,postalCode: String,adUserMerchantMasterId: Int) -> UIImage? {
