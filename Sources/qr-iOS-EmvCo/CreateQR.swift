@@ -105,7 +105,7 @@ public class QRCodeGenerator {
         decryptQRCode(qrCode) { success in
             if success {
                 // Step 2: Return the parsed data after decryption and parsing
-                completion(self.parsedData)  // Assuming parsedData is populated after decryption
+                completion(self.parsedData)
             } else {
                 completion(nil) // Decryption failed or QR code invalid
             }
