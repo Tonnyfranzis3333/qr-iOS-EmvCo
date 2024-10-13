@@ -101,6 +101,17 @@ public class QRCodeGenerator {
         }
     }
 
+    public func processQRCodeString(_ qrCode: String, completion: @escaping ([String: String]?) -> Void) {
+        // Step 1: Decrypt the provided QR code
+        decryptQRCode(qrCode) { success in
+            if success {
+                // Step 2: Return the parsed data after decryption and parsing
+                completion(self.parsedData)  // Assuming parsedData is populated after decryption
+            } else {
+                completion(nil) // Decryption failed or QR code invalid
+            }
+        }
+    }
     // Update decryptQRCode to return the decrypted data as well
     public func decryptQRCode(_ qrCode: String, completion: @escaping (Bool) -> Void) {
         // Split the IV and encrypted data
